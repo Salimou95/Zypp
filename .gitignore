@@ -1,0 +1,4 @@
+# Ignorer le dossier de configuration JetBrains/PhpStorm
+.idea/
+# ...existing code...
+
