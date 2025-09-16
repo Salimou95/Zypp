@@ -1,36 +1,45 @@
 <?php
+require_once __DIR__ . '/../app/config.php';
 require_once __DIR__ . '/../Model/UserModel.php';
 
 class AuthController {
-    private $userModel;
+    private $userModel = null;
 
-    public function __construct() {
-        $this->userModel = new UserModel();
+    private function model() {
+        if (!$this->userModel instanceof UserModel) {
+            $this->userModel = new UserModel();
+        }
+        return $this->userModel;
     }
 
     public function register() {
         $message = '';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $firstName = trim($_POST['firstName'] ?? '');
-            $lastName = trim($_POST['lastName'] ?? '');
-            $mail = trim($_POST['mail'] ?? '');
-            $password = $_POST['password'] ?? '';
-            $missing = [];
+            $firstName = trim(isset($_POST['firstName']) ? $_POST['firstName'] : '');
+            $lastName  = trim(isset($_POST['lastName']) ? $_POST['lastName'] : '');
+            $mail      = trim(isset($_POST['mail']) ? $_POST['mail'] : '');
+            $password  = isset($_POST['password']) ? $_POST['password'] : '';
+
+            $missing = array();
             if (!$firstName) $missing[] = 'prénom';
-            if (!$lastName) $missing[] = 'nom';
-            if (!$mail) $missing[] = 'email';
-            if (!$password) $missing[] = 'mot de passe';
+            if (!$lastName)  $missing[] = 'nom';
+            if (!$mail)      $missing[] = 'email';
+            if (!$password)  $missing[] = 'mot de passe';
+
             if (!empty($missing)) {
                 $message = 'Veuillez remplir le(s) champ(s) suivant(s) : ' . implode(', ', $missing) . '.';
             } else {
-                // Validation de la robustesse du mot de passe
                 if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\d]).{8,}$/', $password)) {
                     $message = 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.';
                 } else {
-                    if ($this->userModel->register($firstName, $lastName, $mail, $password)) {
-                        $message = 'Inscription réussie. Vous pouvez vous connecter.';
-                    } else {
-                        $message = 'Adresse e-mail déjà utilisée.';
+                    try {
+                        if ($this->model()->register($firstName, $lastName, $mail, $password)) {
+                            $message = 'Inscription réussie. Vous pouvez vous connecter.';
+                        } else {
+                            $message = 'Adresse e-mail déjà utilisée.';
+                        }
+                    } catch (Exception $e) {
+                        $message = 'Service indisponible. Veuillez réessayer plus tard.';
                     }
                 }
             }
@@ -41,45 +50,52 @@ class AuthController {
     public function login() {
         session_start();
         if (isset($_SESSION['user'])) {
-            header('Location: /Zypp/');
+            header('Location: ' . ROOT_URL . '/');
             exit;
         }
+
         $message = '';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $mail = trim($_POST['mail'] ?? '');
-            $password = $_POST['password'] ?? '';
-            $missing = [];
-            if (!$mail) $missing[] = 'email';
+            $mail     = trim(isset($_POST['mail']) ? $_POST['mail'] : '');
+            $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+            $missing = array();
+            if (!$mail)     $missing[] = 'email';
             if (!$password) $missing[] = 'mot de passe';
+
             if (!empty($missing)) {
                 $message = 'Veuillez remplir le(s) champ(s) suivant(s) : ' . implode(', ', $missing) . '.';
             } else {
-                $result = $this->userModel->login($mail, $password);
-                if ($result === 'success') {
-                    $_SESSION['user'] = $mail;
-                    header('Location: /Zypp/');
-                    exit;
-                } elseif ($result === 'email_not_found') {
-                    $message = 'Email inconnu.';
-                } elseif ($result === 'wrong_password') {
-                    $message = 'Mot de passe incorrect.';
-                } else {
-                    $message = 'Erreur lors de la connexion.';
+                try {
+                    $result = $this->model()->login($mail, $password);
+                    if ($result === 'success') {
+                        $_SESSION['user'] = $mail;
+                        header('Location: ' . ROOT_URL . '/');
+                        exit;
+                    } elseif ($result === 'email_not_found') {
+                        $message = 'Email inconnu.';
+                    } elseif ($result === 'wrong_password') {
+                        $message = 'Mot de passe incorrect.';
+                    } else {
+                        $message = 'Erreur lors de la connexion.';
+                    }
+                } catch (Exception $e) {
+                    $message = 'Service indisponible. Veuillez réessayer plus tard.';
                 }
             }
         }
+
         include __DIR__ . '/../app/View/login.php';
     }
 
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: /Zypp/');
+        header('Location: ' . ROOT_URL . '/');
         exit;
     }
 
     public function index() {
-        // Affiche la page de connexion par défaut
         $this->login();
     }
 }

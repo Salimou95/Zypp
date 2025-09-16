@@ -1,10 +1,16 @@
-RewriteEngine On
-RewriteBase /Zypp/
+# Front controller routing at project root (when docroot is this folder)
+Options -Indexes -Multiviews
+<IfModule mod_rewrite.c>
+  RewriteEngine On
 
-# Si le fichier ou dossier existe, ne pas réécrire
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+  # Serve existing files/directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
-# Réécrire toutes les autres requêtes vers index.php
-RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+  # Route everything else to index.php with url parameter
+  RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+DirectoryIndex index.php
 

@@ -1,16 +1,25 @@
 <?php
-// Détection robuste de l'URL de base et des chemins d'accès aux assets en fonction du point d'entrée
-$scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
-$scriptDir = rtrim(str_replace('\\', '/', dirname($scriptName)), '/');
+// URL de base et chemins d'assets basés uniquement sur le point d'entrée web
+$scriptName = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
+$baseDir = rtrim(str_replace('\\', '/', dirname($scriptName)), '/');
+if ($baseDir === '/') { $baseDir = ''; }
 
-// Si le script est servi depuis /public, on expose les assets en "/assets" à la racine web
-$servedFromPublic = (substr($scriptDir, -7) === '/public');
-$base = $servedFromPublic ? rtrim(dirname($scriptDir), '/') : $scriptDir; // ex: "/Zypp" ou ""
+if (!defined('ROOT_URL')) define('ROOT_URL', $baseDir);
+if (!defined('ASSETS_URL')) define('ASSETS_URL', ROOT_URL . '/assets');
 
-$root = ($base === '' || $base === '/') ? '' : $base;
+// --- Configuration base de données ---
+if (!function_exists('zypp_env')) {
+    function zypp_env($key, $default = null) {
+        $val = getenv($key);
+        if ($val === false || $val === '') {
+            return $default;
+        }
+        return $val;
+    }
+}
 
-// ROOT_URL pour les routes (pages), ASSETS_URL pour les fichiers statiques (css, js, images)
-define('ROOT_URL', $root);
-// Si servi depuis /public, les assets sont accessibles via "/assets" (docroot = public)
-// Sinon, ils sont sous "{ROOT_URL}/assets"
-define('ASSETS_URL', ($servedFromPublic ? '' : $root) . '/assets');
+if (!defined('DB_HOST')) define('DB_HOST', zypp_env('DB_HOST', 'localhost'));
+if (!defined('DB_NAME')) define('DB_NAME', zypp_env('DB_NAME', 'zypp'));
+if (!defined('DB_USER')) define('DB_USER', zypp_env('DB_USER', 'root'));
+if (!defined('DB_PASS')) define('DB_PASS', zypp_env('DB_PASS', ''));
+if (!defined('DB_CHARSET')) define('DB_CHARSET', zypp_env('DB_CHARSET', 'utf8'));

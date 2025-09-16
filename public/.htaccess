@@ -1,11 +1,17 @@
-RewriteEngine On
+# Front controller routing for pretty URLs
+Options -Indexes -Multiviews
+<IfModule mod_rewrite.c>
+  RewriteEngine On
 
-# Si le fichier ou dossier existe, on ne fait rien
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+  # Serve existing files/directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
-# Redirige tout vers index.php en passant l'URL en paramètre
-RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+  # Route everything else to index.php with url parameter
+  RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
 
-# Optionnel : forcer la casse sur Windows (Contact = contact)
+# Ensure index.php is default
+DirectoryIndex index.php
 
