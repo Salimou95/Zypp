@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg shadow-sm mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/Zypp/public/">
+      <img src="/Zypp/assets/images/Logo.png" alt="Logo" class="me-2">
+    </a>
+    <div class="ms-auto">
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-primary" href="/Zypp/public/">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-primary" href="/Zypp/public/service">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-primary" href="/Zypp/public/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
