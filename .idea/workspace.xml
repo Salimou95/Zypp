@@ -39,12 +39,12 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Salimou95/Zypp.git",
-    "accountId": "80a1e9d9-b35d-468e-9dab-5a670f776a30"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Salimou95/Zypp.git&quot;,
+    &quot;accountId&quot;: &quot;80a1e9d9-b35d-468e-9dab-5a670f776a30&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\Users\salim\OneDrive\Bureau\PHP\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -59,7 +59,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Branch__Auth",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/wamp64/www/Zypp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

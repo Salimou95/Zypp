@@ -1,9 +1,10 @@
+<?php require_once __DIR__ . '/../config.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css">
 </head>
 <body>
     <h2>Inscription</h2>
@@ -21,6 +22,6 @@
         <input type="password" name="password" required><br>
         <button type="submit">S'inscrire</button>
     </form>
-    <p>Déjà inscrit ? <a href="/Zypp/auth/login">Connexion</a></p>
+    <p>Déjà inscrit ? <a href="<?= ROOT_URL ?>/auth/login">Connexion</a></p>
 </body>
 </html>

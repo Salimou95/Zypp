@@ -1,2 +1,210 @@
-/* Copie du style original */
+h1 {
+    color: #007bff;
+}
 
+/* Navigation principale */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 0;
+}
+.navbar-brand {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    height: 60px !important;
+    width: auto;
+    margin: 0 !important;
+    display: block;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+.nav-links a:hover {
+    color: #0056b3;
+}
+.navbar {
+    background-color: #97ecd3 !important;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
+.navbar .container-fluid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar .nav-link,
+.navbar .nav-links a {
+    color: #111 !important;
+    font-size: 0.9em !important;
+    font-weight: 400 !important;
+}
+
+.bg-dark-blue {
+    background-color: #062638 !important;
+}
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    color: #fff !important;
+}
+.hero-title span {
+    margin-bottom: 0.3em;
+    display: inherit;
+}
+.hero-btn {
+    margin-top: 0 !important;
+    background-color: #159f88 !important;
+    border-color: #159f88 !important;
+    color: #fff !important;
+    font-size: 0.95rem !important;
+    padding: 0.4rem 1.1rem !important;
+    border-radius: 2rem !important;
+}
+.hero-btn:hover, .hero-btn:focus {
+    background-color: #117e6c !important;
+    border-color: #117e6c !important;
+    color: #fff !important;
+}
+.hero-section {
+    /* Pour éviter un max-width Bootstrap sur le h1 */
+    padding: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    color: #fff !important;
+}
+.row-bloc-services {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  align-items: stretch; /* aligner tous les blocs à la même hauteur */
+  min-height: 140px; /* hauteur minimale pour garantir l'alignement */
+}
+.row-bloc-services article {
+  flex: 0 0 auto;
+  width: 110px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  /* Suppression de la bordure */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 0.5rem 0.2rem;
+}
+.row-bloc-services article h2 {
+  font-size: 0.8rem;
+  margin: 0.3rem 0 0 0;
+  line-height: 1.1;
+  font-weight: 500;
+}
+.row-bloc-services article span {
+  display: block;
+}
+.row-bloc-services img {
+  max-width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+@media (min-width: 576px) {
+  .row-bloc-services {
+    justify-content: center;
+    gap: 2rem;
+    min-height: 160px;
+  }
+  .row-bloc-services article {
+    width: 140px;
+    padding: 0.7rem 0.3rem;
+  }
+  .row-bloc-services img {
+    max-width: 56px;
+    height: 56px;
+  }
+}
+@media (max-width: 991.98px) {
+    .navbar {
+        display: flex !important;
+        align-items: center !important;
+        background-color: #97ecd3 !important;
+        height: 80px !important;
+        min-height: 80px !important;
+    }
+    .navbar-brand {
+        height: auto;
+    }
+    .navbar-brand img {
+        height: 40px !important;
+    }
+    .navbar .container-fluid {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    .hero-title span {
+        display: block !important;
+        margin-bottom: 0.08em;
+    }
+    .hero-btn {
+        font-size: 0.8rem !important;
+        padding: 0.25rem 1.2rem !important; /* largeur augmentée */
+    }
+    .hero-section {
+        padding: 30px !important;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-site {
+    background: #062638;
+    color: #fff;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+    position: relative;
+    z-index: 10;
+    display: block !important;
+}
+.footer-site .container {
+    padding: 0;
+}
+
+
+.temoignage-section {
+    background: #e4eeec;
+}

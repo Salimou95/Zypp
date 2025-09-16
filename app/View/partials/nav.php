@@ -1,25 +1,26 @@
 <?php
+require_once __DIR__ . '/../../config.php';
 if (session_status() === PHP_SESSION_NONE) session_start();
 ?>
 <nav class="navbar navbar-expand-lg shadow-sm mb-4">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="/Zypp/public/">
-      <img src="/Zypp/assets/images/Logo.png" alt="Logo" class="me-2">
+    <a class="navbar-brand d-flex align-items-center" href="<?= ROOT_URL ?>/">
+      <img src="<?= ASSETS_URL ?>/images/Logo.png" alt="Logo" class="me-2">
     </a>
     <div class="ms-auto">
       <ul class="navbar-nav flex-row gap-3">
         <li class="nav-item">
-          <a class="nav-link fw-bold text-primary" href="/Zypp/public/">Accueil</a>
+          <a class="nav-link fw-bold text-primary" href="<?= ROOT_URL ?>/">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold text-primary" href="/Zypp/public/service">Service</a>
+          <a class="nav-link fw-bold text-primary" href="<?= ROOT_URL ?>/service">Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold text-primary" href="/Zypp/public/contact">Contact</a>
+          <a class="nav-link fw-bold text-primary" href="<?= ROOT_URL ?>/contact">Contact</a>
         </li>
         <?php if (isset($_SESSION['user'])): ?>
         <li class="nav-item">
-          <a class="nav-link fw-bold text-danger" href="/Zypp/auth/logout">Se déconnecter</a>
+          <a class="nav-link fw-bold text-danger" href="<?= ROOT_URL ?>/auth/logout">Se déconnecter</a>
         </li>
         <?php endif; ?>
       </ul>
