@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="d-flex flex-column min-vh-100">
+<?php
+session_start();
+?>
     <?php include __DIR__ . '/partials/nav.php'; ?>
     <section class="hero-section bg-dark-blue text-white py-5 text-start">
         <h1 class="hero-title mb-4">
