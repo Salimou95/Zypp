@@ -1,5 +1,10 @@
 RewriteEngine On
+RewriteBase /Zypp/
+
+# Si le fichier ou dossier existe, ne pas réécrire
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Réécrire toutes les autres requêtes vers index.php
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 
