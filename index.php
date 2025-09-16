@@ -14,7 +14,7 @@ spl_autoload_register(function ($class) {
 
 // Récupération de l'URL
 $url = isset($_GET['url']) ? explode('/', trim($_GET['url'], '/')) : [];
-$controllerName = !empty($url[0]) ? ucfirst($url[0]) . 'Controller' : 'HomeController';
+$controllerName = !empty($url[0]) ? ucfirst(strtolower($url[0])) . 'Controller' : 'HomeController';
 $action = isset($url[1]) ? $url[1] : 'index';
 
 if (class_exists($controllerName)) {
@@ -27,4 +27,3 @@ if (class_exists($controllerName)) {
 } else {
     echo "Contrôleur non trouvé.";
 }
-
