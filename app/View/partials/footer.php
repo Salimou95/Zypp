@@ -44,6 +44,12 @@
         </div>
       </div>
       <hr class="footer-divider">
+      <!-- Section liens légaux -->
+      <div class="text-center footer-legal-links">
+        <a href="#" class="footer-legal-link">Politique de cookies</a>
+        <a href="#" class="footer-legal-link">Mentions légales</a>
+        <a href="#" class="footer-legal-link">Politique de confidentialité</a>
+      </div>
       <div class="text-center">
         <p>&copy; 2024 ZYPP. Tous droits réservés.</p>
       </div>

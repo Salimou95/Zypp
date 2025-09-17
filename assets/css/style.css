@@ -1026,3 +1026,38 @@ body.has-fixed-nav { padding-top:90px; }
         padding: 2rem 0 1.5rem 0;
     }
 }
+
+/* Section liens légaux */
+.footer-legal-links {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+.footer-legal-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 0.85rem; /* Réduction de 1rem à 0.85rem */
+    margin: 0 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Responsive pour les liens légaux */
+@media (max-width: 768px) {
+    .footer-legal-links {
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .footer-legal-link {
+        font-size: 0.75rem; /* Réduction de 0.9rem à 0.75rem pour mobile */
+        margin: 0 0.8rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+}
