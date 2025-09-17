@@ -783,15 +783,19 @@ body.has-fixed-nav { padding-top:90px; }
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: #97ecd3;
     color: #272b7c;
     border-radius: 50%;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 700;
     margin: 0 auto 1.5rem auto;
     font-family: 'Anton', sans-serif;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .article-title {
