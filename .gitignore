@@ -1,4 +1,3 @@
-# Ignorer le dossier de configuration JetBrains/PhpStorm
-.idea/
-# ...existing code...
-
+# Ignorer le fichier .env contenant les variables sensibles
+.env
+.idea/workspace.xml
