@@ -131,6 +131,11 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   </div>
 </section>
 
+<!-- Section avec image zypp.png en pleine taille -->
+<section class="zypp-image-section">
+    <img src="<?= ASSETS_URL ?>/images/zypp.png" alt="Zypp" class="zypp-full-image">
+</section>
+
 <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 </html>
