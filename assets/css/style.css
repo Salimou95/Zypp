@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 h1 {
     color: #007bff;
@@ -50,9 +51,28 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 0 !important;
-    padding-top: 18px; /* ajout */
-    padding-bottom: 18px; /* ajout */
+    padding-top: 18px;
+    padding-bottom: 18px;
     transition: box-shadow .25s ease;
+    /* Styles pour la navigation sticky */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Classe pour masquer la navbar */
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+/* Classe pour la navbar visible avec ombre */
+.navbar-visible {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .navbar .container-fluid {
@@ -153,6 +173,8 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', Arial, sans-serif; /* police globale */
+    /* Ajouter un padding-top au body pour compenser la navbar fixe */
+    padding-top: 80px; /* Ajuster selon la hauteur de la navbar */
 }
 
 .footer-site {
@@ -207,9 +229,239 @@ body.has-fixed-nav { padding-top:90px; }
 /* Nouvelle section offre */
 .offer-section { background:#97ecd3; text-align:center; padding-top:6rem; padding-bottom:6rem; }
 .offer-section .container { max-width: 930px; }
-.offer-title { color:#062638; font-weight:700; font-size:2.1rem; line-height:1.32; margin:0 auto 2rem auto; }
-@media (min-width:768px){ .offer-title { font-size:2.45rem; } }
+.offer-title {
+    color:#062638;
+    font-weight:800;
+    font-size:2.9rem;
+    line-height:1.55;
+    margin:0 auto 2rem auto;
+    font-family: 'Anton', sans-serif;
+}
+@media (min-width:768px){ .offer-title { font-size:2.9rem; } }
 .offer-download-link { display:inline-block; background:#3d3c3c; color:#ffffff; font-weight:600; text-decoration:none; padding:0.95rem 2rem; font-size:1.05rem; transition:all .25s ease; border:2px solid #3d3c3c; border-radius:0; }
 .offer-download-link:hover, .offer-download-link:focus { background:#ffffff; color:#3d3c3c; }
 .offer-download-link:focus { outline:2px solid #ffffff; outline-offset:2px; }
-/* Fin section offre */
+
+/* Nouvelle section offre redesignée */
+.offer-section-new {
+    background: #ffffff;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.offer-content {
+    padding-right: 2rem;
+    background: #3b4d7a; /* Fond bleu foncé comme dans l'image */
+    padding: 3.5rem;
+    border-radius: 0;
+    box-shadow: none; /* Suppression de l'ombre */
+    min-height: 350px;
+    height: 100%; /* Pour égaliser avec l'image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer-main-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.9rem; /* Réduction légère de la taille */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.offer-sub-title {
+    color: #97ecd3;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+}
+
+.offer-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.offer-social-icons {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    color: #3b4d7a;
+    border-radius: 50%; /* Forme circulaire */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.social-icon:hover {
+    background: #97ecd3;
+    color: #3b4d7a;
+    transform: translateY(-2px);
+}
+
+.offer-download-btn {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    border: 2px solid #000000;
+    border-radius: 0;
+}
+
+.offer-download-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.offer-image {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Pour égaliser avec le contenu */
+}
+
+.offer-image img {
+    border-radius: 0;
+    box-shadow: none; /* Suppression de l'ombre sur l'image */
+    transition: transform 0.3s ease;
+    min-height: 350px;
+    object-fit: cover;
+    width: 100%;
+    height: 350px; /* Hauteur fixe pour égaliser */
+}
+
+/* Section découverte */
+.discover-content {
+    padding-right: 2rem;
+    /* Changement de la couleur de fond */
+    background: #27b7c1;
+    padding: 3.5rem; /* Augmentation du padding pour plus de hauteur */
+    border-radius: 0; /* Suppression du border-radius */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    min-height: 350px; /* Hauteur minimale pour l'article */
+}
+
+.discover-main-title {
+    color: #ffffff; /* Changement couleur en blanc pour contraste */
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.discover-sub-title {
+    color: #97ecd3; /* Couleur verte claire pour contraste sur fond bleu */
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+}
+
+.discover-text {
+    color: #ffffff; /* Changement couleur en blanc pour contraste */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.discover-social-icons {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.discover-social-icons .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    color: #27b7c1;
+    border-radius: 50%; /* Forme circulaire */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.discover-social-icons .social-icon:hover {
+    background: #97ecd3;
+    color: #27b7c1;
+    transform: translateY(-2px);
+}
+
+.discover-btn {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    border: 2px solid #000000;
+    border-radius: 0; /* Suppression du border-radius */
+}
+
+.discover-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.discover-image img {
+    border-radius: 0; /* Suppression du border-radius */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    min-height: 350px; /* Hauteur minimale pour équilibrer avec l'article de gauche */
+    object-fit: cover; /* Pour maintenir les proportions avec la hauteur fixe */
+}
+
+/* Responsive pour la nouvelle section offre */
+@media (max-width: 768px) {
+    .offer-content {
+        padding-right: 0;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .offer-main-title {
+        font-size: 1.8rem;
+    }
+
+    .offer-sub-title {
+        font-size: 1.5rem;
+    }
+
+    .offer-text {
+        font-size: 1rem;
+    }
+
+    .offer-social-icons {
+        justify-content: center;
+    }
+}
