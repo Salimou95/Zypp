@@ -92,6 +92,45 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   </div>
 </section>
 
+<!-- Section Comment ça marche -->
+<section class="how-it-works-section">
+  <div class="container">
+    <h2 class="how-it-works-title">Comment ça marche ?</h2>
+  </div>
+</section>
+
+<!-- Section numérotée -->
+<section class="numbered-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <article class="numbered-article">
+          <div class="article-number">1</div>
+          <h3 class="article-title">Scanner le QR code</h3>
+          <p class="article-text">Téléchargez l'application ZYPP, créez un compte et repérez les trottinettes ZYPP le plus proche directement sur l'app.</p>
+          <a href="#" class="article-btn">Plus d'infos</a>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <article class="numbered-article">
+          <div class="article-number">2</div>
+          <h3 class="article-title">Débloquer la trottinette</h3>
+          <p class="article-text">Scannez le QR code pour démarrer votre trottinette, paye le montant afficher ! Pas besoin d’abonnement, galopez autant qu’il vous plaît.</p>
+          <a href="#" class="article-btn">Plus d'infos</a>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <article class="numbered-article">
+          <div class="article-number">3</div>
+          <h3 class="article-title">Rouler & Stationner correctement</h3>
+          <p class="article-text">Des centaines de parking sont disponibles dans votre ville, repérez le plus proche de votre destination sur l’application </p>
+          <a href="#" class="article-btn">Plus d'infos</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 </html>
