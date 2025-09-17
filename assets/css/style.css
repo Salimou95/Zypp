@@ -499,36 +499,40 @@ body.has-fixed-nav { padding-top:90px; }
         text-align: center;
     }
 
-    .offer-main-title {
-        font-size: 1.8rem;
-    }
-
-    .offer-sub-title {
-        font-size: 1.5rem;
-    }
-
-    .offer-text {
-        font-size: 1rem;
-    }
-
-    .offer-social-icons {
-        justify-content: center;
+    .discover-content {
+        padding-right: 0;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
     }
 }
 
-/* Responsive pour la section Trouver votre ZYPPI */
+/* Section Carte Montpellier */
+.map-section {
+    background: #272b7c;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.map-container {
+    width: 75%; /* Augmentation de 50% à 75% */
+    margin: 0 auto; /* Centrer la carte */
+    height: 500px; /* Réduction de 600px à 400px */
+    border-radius: 0; /* Suppression du border-radius */
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive pour la section carte */
 @media (max-width: 768px) {
-    .find-zyppi-title {
-        font-size: 1.4rem; /* Réduction de 1.6rem à 1.4rem pour mobile */
-    }
-
-    .find-zyppi-text {
-        font-size: 0.8rem; /* Réduction de 0.9rem à 0.8rem pour mobile */
-        padding: 0 1rem;
-    }
-
-    .find-zyppi-btn {
-        padding: 0.7rem 1.5rem; /* Réduction du padding pour mobile */
-        font-size: 0.9rem; /* Réduction de 1rem à 0.9rem pour mobile */
+    .map-container {
+        width: 90%; /* Augmentation de 80% à 90% sur mobile */
+        height: 300px; /* Réduction de 450px à 300px pour mobile */
     }
 }
