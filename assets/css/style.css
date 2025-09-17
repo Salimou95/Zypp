@@ -342,7 +342,7 @@ body.has-fixed-nav { padding-top:90px; }
 
 .offer-image img {
     border-radius: 0;
-    box-shadow: none; /* Suppression de l'ombre sur l'image */
+    box-shadow: none; /* Suppression de l'ombre sur l'images */
     transition: transform 0.3s ease;
     min-height: 350px;
     object-fit: cover;
@@ -434,10 +434,60 @@ body.has-fixed-nav { padding-top:90px; }
 
 .discover-image img {
     border-radius: 0; /* Suppression du border-radius */
-    box-shadow: none; /* Suppression de l'ombre sur l'image */
+    box-shadow: none; /* Suppression de l'ombre sur l'images */
     transition: transform 0.3s ease;
     min-height: 350px; /* Hauteur minimale pour équilibrer avec l'article de gauche */
     object-fit: cover; /* Pour maintenir les proportions avec la hauteur fixe */
+}
+
+/* Section Trouver votre ZYPPI */
+.find-zyppi-section {
+    background: rgb(250, 250, 250); /* Changement de #DCDEDC à rgb(250, 250, 250) */
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+.find-zyppi-title {
+    color: #062638;
+    font-weight: 700;
+    font-size: 1.7rem; /* Réduction de 2rem à 1.7rem */
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.find-zyppi-text {
+    color: #333333;
+    font-size: 0.9rem; /* Réduction de 1rem à 0.9rem */
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.find-zyppi-btn {
+    display: inline-block;
+    background: #97ecd3; /* Couleur de fond de la navbar */
+    color: #000000; /* Texte noir */
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 2rem; /* Réduction du padding de 1rem 2.5rem à 0.8rem 2rem */
+    font-size: 1rem; /* Réduction de 1.1rem à 1rem */
+    transition: all 0.25s ease;
+    border: none;
+    border-radius: 0; /* Sans border-radius */
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.4); /* Box shadow plus rectangulaire et sombre */
+}
+
+.find-zyppi-btn:hover {
+    background: #85e0c7;
+    color: #000000;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.5); /* Box shadow hover plus sombre */
+    transform: translateY(-1px);
 }
 
 /* Responsive pour la nouvelle section offre */
@@ -463,5 +513,22 @@ body.has-fixed-nav { padding-top:90px; }
 
     .offer-social-icons {
         justify-content: center;
+    }
+}
+
+/* Responsive pour la section Trouver votre ZYPPI */
+@media (max-width: 768px) {
+    .find-zyppi-title {
+        font-size: 1.4rem; /* Réduction de 1.6rem à 1.4rem pour mobile */
+    }
+
+    .find-zyppi-text {
+        font-size: 0.8rem; /* Réduction de 0.9rem à 0.8rem pour mobile */
+        padding: 0 1rem;
+    }
+
+    .find-zyppi-btn {
+        padding: 0.7rem 1.5rem; /* Réduction du padding pour mobile */
+        font-size: 0.9rem; /* Réduction de 1rem à 0.9rem pour mobile */
     }
 }

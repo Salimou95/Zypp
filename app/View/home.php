@@ -65,6 +65,15 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   </div>
 </section>
 
+<!-- Section Trouver votre ZYPPI -->
+<section class="find-zyppi-section">
+  <div class="container">
+    <h2 class="find-zyppi-title">Trouver votre ZYPPI</h2>
+    <p class="find-zyppi-text">Téléchargez l'application ZYPP, créez un compte et repérez votre ZYPPI le plus proche directement sur l'app !</p>
+    <a href="#" class="find-zyppi-btn">Commencer</a>
+  </div>
+</section>
+
 <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 </html>
