@@ -19,6 +19,18 @@ if (session_status() === PHP_SESSION_NONE) session_start();
   <img id="heroImage" src="<?= ASSETS_URL ?>/images/Section_trot.png?v=3" alt="Présentation" class="hero-img" />
 </section>
 
+<!-- Section offre ZYPP -->
+<section class="offer-section py-5">
+  <div class="container">
+    <h2 class="offer-title">
+      ZYPP Vous offre des trottinettes&nbsp;électriques haut<br>
+      de gamme en libre service, disponibles à la<br>
+      location directement depuis votre téléphone.
+    </h2>
+    <a href="#" class="offer-download-link">Télécharger l'App</a>
+  </div>
+</section>
+
 <?php include __DIR__ . '/partials/footer.php'; ?>
 </body>
 </html>

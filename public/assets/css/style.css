@@ -201,3 +201,12 @@ body {
 /* Ajout */
 .navbar-fixed { position:fixed; top:0; left:0; right:0; z-index:1030; width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
 body.has-fixed-nav { padding-top:90px; }
+/* Section offre (synchronisée) */
+.offer-section { background:#97ecd3; text-align:center; padding-top:4rem; padding-bottom:4rem; }
+.offer-section .container { max-width:930px; }
+.offer-title { color:#062638; font-weight:700; font-size:2.1rem; line-height:1.32; margin:0 auto 2rem auto; }
+@media (min-width:768px){ .offer-title { font-size:2.45rem; } }
+.offer-download-link { display:inline-block; background:#3d3c3c; color:#ffffff; font-weight:600; text-decoration:none; padding:0.95rem 2rem; font-size:1.05rem; transition:all .25s ease; border:2px solid #3d3c3c; border-radius:0; }
+.offer-download-link:hover, .offer-download-link:focus { background:#ffffff; color:#3d3c3c; }
+.offer-download-link:focus { outline:2px solid #ffffff; outline-offset:2px; }
+/* Fin section offre */
