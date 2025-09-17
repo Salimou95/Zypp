@@ -8,13 +8,17 @@ $baseDir = $scriptDir;
 // ROOT_URL reste basé sur le script courant
 if (!defined('ROOT_URL')) define('ROOT_URL', $baseDir);
 
-// Correction: si le script se trouve dans /public, on retire /public pour cibler les assets réels situés à la racine
+// Détection intelligente des assets selon l'environnement
 $assetBase = $baseDir;
+
+// Si on est dans /public, utiliser les assets de public, sinon ceux de la racine
 if (substr($assetBase, -7) === '/public') {
-    $assetBase = substr($assetBase, 0, -7); // enlève '/public'
-    if ($assetBase === '/') $assetBase = '';
+    // On est dans public/, utiliser les assets de public/
+    if (!defined('ASSETS_URL')) define('ASSETS_URL', $assetBase . '/assets');
+} else {
+    // On est à la racine, utiliser les assets de la racine
+    if (!defined('ASSETS_URL')) define('ASSETS_URL', $assetBase . '/assets');
 }
-if (!defined('ASSETS_URL')) define('ASSETS_URL', $assetBase . '/assets');
 
 // --- Configuration base de données ---
 if (!function_exists('zypp_env')) {

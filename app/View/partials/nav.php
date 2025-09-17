@@ -5,7 +5,11 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 <nav class="navbar navbar-expand-lg shadow-sm mb-4">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="<?= ROOT_URL ?>/">
-      <img src="<?= ASSETS_URL ?>/images/Logo.png" alt="Logo" class="me-2">
+      <?php
+      // Utiliser Logo.png si on est dans public/, sinon logo.png pour la racine
+      $logoFile = (strpos(ASSETS_URL, '/public/') !== false) ? 'Logo.png' : 'logo.png';
+      ?>
+      <img src="<?= ASSETS_URL ?>/images/<?= $logoFile ?>" alt="Logo" class="me-2">
     </a>
     <div class="ms-auto">
       <ul class="navbar-nav flex-row gap-3 align-items-center">
