@@ -876,3 +876,149 @@ body.has-fixed-nav { padding-top:90px; }
         font-size: 0.75rem; /* Réduction de la taille de police mobile de 0.8rem à 0.75rem */
     }
 }
+
+/* === FOOTER STYLES === */
+.footer {
+    margin-top: auto;
+}
+
+/* Premier article avec fond vert comme la nav */
+.footer-social {
+    background: linear-gradient(to right,
+        #97ecd3 0%,
+        #a5ebd7 25%,
+        #9fe8d3 50%,
+        #a5ebd7 75%,
+        #97ecd3 100%);
+    padding: 2rem 0;
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.1rem; /* Réduction de 1rem à 0.5rem */
+}
+
+.footer-social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px; /* Augmentation de 50px à 70px */
+    height: 70px; /* Augmentation de 50px à 70px */
+    background: transparent; /* Suppression du fond blanc */
+    color: #fff; /* Changement de couleur vers blanc */
+    border-radius: 50%;
+    font-size: 1.8rem; /* Augmentation de 1.2rem à 1.8rem */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: none; /* Suppression de l'ombre */
+}
+
+.footer-social-icon:hover {
+    background: rgba(255, 255, 255, 0.1); /* Léger fond semi-transparent au survol */
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: none; /* Suppression de l'ombre au survol */
+}
+
+/* Second article avec fond bleu */
+.footer-info {
+    background-color: #272b7c; /* Changement de #007bff vers #272b7c */
+    color: #fff;
+    padding: 3rem 0 2rem 0;
+    /* Suppression du centrage du contenu */
+}
+
+.footer-info h5 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem; /* Augmentation de la taille du titre */
+}
+
+.footer-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: 1rem; /* Augmentation de la taille du texte */
+}
+
+/* Styles pour les listes de liens */
+.footer-links-no-bullet {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 3rem; /* Ajout d'espace à droite du premier bloc */
+    /* Suppression du centrage de la liste sans puces */
+}
+
+.footer-links-no-bullet li {
+    margin-bottom: 0;
+}
+
+.footer-links-no-bullet li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1rem; /* Augmentation de 0.9rem à 1rem */
+}
+
+.footer-links-no-bullet li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-links-with-bullet {
+    list-style: disc;
+    padding-left: 1.2rem;
+    margin: 0;
+    text-align: left;
+    /* Suppression du display: inline-block pour centrer le bloc */
+}
+
+.footer-links-with-bullet li {
+    margin-bottom: 0;
+}
+
+.footer-links-with-bullet li a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    font-size: 1rem; /* Augmentation de 0.9rem à 1rem */
+}
+
+.footer-links-with-bullet li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 2rem 0 1.5rem 0;
+}
+
+.footer-info .text-center p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem; /* Augmentation de 0.9rem à 1rem */
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-icons-container {
+        gap: 1.5rem;
+    }
+
+    .footer-social-icon {
+        width: 60px; /* Augmentation de 45px à 60px */
+        height: 60px; /* Augmentation de 45px à 60px */
+        font-size: 1.5rem; /* Augmentation de 1.1rem à 1.5rem */
+    }
+
+    .footer-info {
+        padding: 2rem 0 1.5rem 0;
+    }
+}
