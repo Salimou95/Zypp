@@ -1,11 +1,20 @@
 <?php
 // URL de base et chemins d'assets basés uniquement sur le point d'entrée web
 $scriptName = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '';
-$baseDir = rtrim(str_replace('\\', '/', dirname($scriptName)), '/');
-if ($baseDir === '/') { $baseDir = ''; }
+$scriptDir = rtrim(str_replace('\\', '/', dirname($scriptName)), '/');
+if ($scriptDir === '/') { $scriptDir = ''; }
+$baseDir = $scriptDir;
 
+// ROOT_URL reste basé sur le script courant
 if (!defined('ROOT_URL')) define('ROOT_URL', $baseDir);
-if (!defined('ASSETS_URL')) define('ASSETS_URL', ROOT_URL . '/assets');
+
+// Correction: si le script se trouve dans /public, on retire /public pour cibler les assets réels situés à la racine
+$assetBase = $baseDir;
+if (substr($assetBase, -7) === '/public') {
+    $assetBase = substr($assetBase, 0, -7); // enlève '/public'
+    if ($assetBase === '/') $assetBase = '';
+}
+if (!defined('ASSETS_URL')) define('ASSETS_URL', $assetBase . '/assets');
 
 // --- Configuration base de données ---
 if (!function_exists('zypp_env')) {
