@@ -59,7 +59,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "historique__location",
     "last_opened_file_path": "C:/wamp64/www/Zypp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -117,6 +117,7 @@
       <workItem from="1757992501784" duration="128000" />
       <workItem from="1757992632500" duration="11217000" />
       <workItem from="1758009233886" duration="1629000" />
+      <workItem from="1758084476251" duration="4848000" />
     </task>
     <servers />
   </component>

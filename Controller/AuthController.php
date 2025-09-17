@@ -50,7 +50,7 @@ class AuthController {
     public function login() {
         session_start();
         if (isset($_SESSION['user'])) {
-            header('Location: ' . ROOT_URL . '/');
+            header('Location: ' . ROOT_URL . '/location');
             exit;
         }
 
@@ -70,7 +70,7 @@ class AuthController {
                     $result = $this->model()->login($mail, $password);
                     if ($result === 'success') {
                         $_SESSION['user'] = $mail;
-                        header('Location: ' . ROOT_URL . '/');
+                        header('Location: ' . ROOT_URL . '/location');
                         exit;
                     } elseif ($result === 'email_not_found') {
                         $message = 'Email inconnu.';
