@@ -44,9 +44,10 @@ h1 {
     background-color: #97ecd3 !important;
     background: linear-gradient(to right,
         #97ecd3 0%,
-        #a5ebd7 25%,
-        #9fe8d3 50%,
-        #a5ebd7 75%,
+        #a5ebd7 15%,
+        #b8eeda 35%,
+        #b8eeda 65%,
+        #a5ebd7 85%,
         #97ecd3 100%) !important;
     display: flex;
     align-items: center;
