@@ -763,7 +763,7 @@ body.has-fixed-nav { padding-top:90px; }
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     height: 100%;
-    min-height: 420px; /* Augmentation de la hauteur minimale */
+    min-height: 280px; /* Réduction de 420px à 380px */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
