@@ -29,11 +29,11 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 <!-- Section offre ZYPP -->
 <section class="offer-section py-5">
   <div class="container">
-    <h2 class="offer-title">
+    <h1 class="offer-title">
       ZYPP Vous offre des trottinettes&nbsp;électriques haut<br>
       de gamme en libre service, disponibles à la<br>
       location directement depuis votre téléphone.
-    </h2>
+    </h1>
     <a href="#" class="offer-download-link">Télécharger l'App</a>
   </div>
 </section>

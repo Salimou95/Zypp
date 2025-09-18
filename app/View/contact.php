@@ -23,7 +23,7 @@
             <div class="col-lg-3 contact-info-col">
                 <div class="contact-info">
                     <div class="contact-info-content">
-                        <h2 class="contact-title">Contactez-nous</h2>
+                        <h1 class="contact-title">Contactez-nous</h1>
                         <p class="contact-address">47 rue des Couronnes<br>34020 Montpellier, France</p>
                         <p class="contact-details">01 23 45 67 89</p>
                         <p class="contact-details">info@zypp.fr</p>

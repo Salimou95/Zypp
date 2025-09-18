@@ -22,7 +22,7 @@
             <div class="card shadow-lg border-0 auth-card">
                 <div class="card-body p-5">
                     <div class="text-center mb-4">
-                        <h2 class="fw-bold mb-2" style="color: #0D2139;">Inscription</h2>
+                        <h1 class="fw-bold mb-2" style="color: #0D2139;">Inscription</h1>
                         <p class="mb-0" style="color: #666666; font-size: 0.95rem;">Créez votre compte ZYPP gratuitement</p>
                     </div>
 
