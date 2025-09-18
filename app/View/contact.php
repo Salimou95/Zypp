@@ -24,7 +24,8 @@
                     <div class="contact-info-content">
                         <h2 class="contact-title">Contactez-nous</h2>
                         <p class="contact-address">47 rue des Couronnes<br>34020 Montpellier, France</p>
-                        <p class="contact-details">01 23 45 67 89<br>info@zypp.fr</p>
+                        <p class="contact-details">01 23 45 67 89</p>
+                        <p class="contact-details">info@zypp.fr</p>
 
                         <!-- Icônes des réseaux sociaux -->
                         <div class="contact-social-icons">
@@ -35,11 +36,16 @@
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href="#" class="contact-social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="contact-social-icon">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
+                            <a href="#" class="contact-social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+
+                        <!-- Texte légal RGPD -->
+                        <div class="contact-legal-text">
+                            <p>Les informations recueillies via ce formulaire sont enregistrées par Zypp afin de répondre à votre demande de contact. Elles ne seront pas utilisées à d'autres fins. Conformément au RGPD, vous pouvez exercer vos droits d'accès, de rectification et de suppression de vos données en écrivant à : contact@zypp.fr</p>
                         </div>
                     </div>
                 </div>

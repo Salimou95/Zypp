@@ -1071,20 +1071,20 @@ body.has-fixed-nav { padding-top:90px; }
 }
 
 .contact-info-col {
-    width: 30% !important;
-    flex: 0 0 30%;
+    width: 32% !important; /* Augmentation légère de 30% à 32% */
+    flex: 0 0 32%;
 }
 
 .contact-form-col {
-    width: 70% !important;
-    flex: 0 0 70%;
+    width: 68% !important; /* Réduction de 70% à 68% */
+    flex: 0 0 68%;
 }
 
 /* Article de gauche - Informations de contact */
 .contact-info {
     background-color: #272b7c;
     color: #ffffff;
-    padding: 4rem 2rem;
+    padding: 5rem 2rem 2rem 2rem; /* Suppression du padding bottom (5rem) et remplacement par 2rem */
     height: 100%;
     min-height: calc(100vh - 160px);
     display: flex;
@@ -1095,13 +1095,13 @@ body.has-fixed-nav { padding-top:90px; }
 
 .contact-info-content {
     text-align: left;
-    max-width: 250px;
+    max-width: 260px; /* Augmentation légère de 250px à 260px pour s'adapter à la nouvelle largeur */
 }
 
 .contact-title {
     color: #ffffff;
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem; /* Augmentation de 1.2rem à 1.5rem */
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1109,44 +1109,53 @@ body.has-fixed-nav { padding-top:90px; }
 
 .contact-address {
     color: #ffffff;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem; /* Réduction de 0.95rem à 0.85rem */
+    line-height: 1.4; /* Réduction de 1.6 à 1.4 pour moins d'espacement */
+    margin-bottom: 1rem; /* Réduction de 1.5rem à 1rem */
     font-weight: 400;
 }
 
 .contact-details {
     color: #ffffff;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: 0.85rem; /* Réduction de 0.95rem à 0.85rem */
+    line-height: 1.3; /* Réduction de 1.6 à 1.3 pour moins d'espacement */
+    margin-bottom: 0.3rem; /* Réduction de 1rem à 0.3rem pour moins d'espace entre numéro et email */
     font-weight: 400;
 }
 
 .contact-social-icons {
     display: flex;
-    gap: 0.8rem;
-    margin-top: 0.5rem;
+    gap: 0.1rem; /* Réduction de 0.8rem à 0.1rem */
+    margin-top: 1rem; /* Augmentation de 0.5rem à 1rem pour plus d'espace entre l'email et les icônes */
+    margin-bottom: 6rem; /* Augmentation de 4rem à 6rem pour encore plus d'espace avant le texte RGPD */
 }
 
 .contact-social-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 28px; /* Réduction de 35px à 28px */
+    height: 28px; /* Réduction de 35px à 28px */
     background: #0D2139;
     color: #ffffff;
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.8rem; /* Réduction de 1rem à 0.8rem */
 }
 
-.contact-social-icon:hover {
-    background: #0b1b30;
-    color: #ffffff;
-    transform: translateY(-2px);
+/* Texte légal RGPD */
+.contact-legal-text {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+.contact-legal-text p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.65rem; /* Très petit texte */
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    font-weight: 300;
 }
 
 /* Article de droite - Formulaire */
@@ -1162,7 +1171,7 @@ body.has-fixed-nav { padding-top:90px; }
 
 .contact-form {
     width: 100%;
-    max-width: 500px;
+    max-width: 650px; /* Augmentation de 500px à 650px pour plus de largeur */
     margin: 0 auto;
 }
 
@@ -1176,9 +1185,9 @@ body.has-fixed-nav { padding-top:90px; }
 }
 
 .contact-form .form-control {
-    border: 2px solid #e0e0e0;
+    border: 1px solid #333333; /* Ajout d'une bordure noire légère */
     border-radius: 0;
-    padding: 0.6rem 0.8rem;
+    padding: 0.25rem 0.5rem; /* Réduction encore plus du padding de 0.3rem 0.5rem à 0.25rem 0.5rem */
     font-size: 0.85rem;
     transition: border-color 0.3s ease;
     height: auto;
@@ -1190,16 +1199,16 @@ body.has-fixed-nav { padding-top:90px; }
 }
 
 .contact-form textarea.form-control {
-    min-height: 100px;
+    min-height: 50px; /* Réduction encore plus de 60px à 50px */
     resize: vertical;
 }
 
 .contact-submit-btn {
     background: #97ecd3 !important;
-    color: #062638 !important;
-    font-weight: 600;
+    color: #272b7c !important; /* Changement de #062638 à #272b7c */
+    font-weight: 400; /* Changement de 600 (bold) à 400 (normal) pour un texte plus fin */
     text-decoration: none;
-    padding: 0.8rem 2rem;
+    padding: 0.3rem 2rem; /* Réduction encore plus du padding vertical de 0.4rem à 0.3rem */
     font-size: 1rem;
     transition: all 0.25s ease;
     border: 2px solid #97ecd3 !important;
@@ -1212,7 +1221,7 @@ body.has-fixed-nav { padding-top:90px; }
 .contact-submit-btn:hover {
     background: #85e0c7 !important;
     border-color: #85e0c7 !important;
-    color: #062638 !important;
+    color: #272b7c !important; /* Maintien de la même couleur au hover */
     transform: translateY(-1px);
 }
 
@@ -1238,6 +1247,12 @@ body.has-fixed-nav { padding-top:90px; }
         margin-top: 2rem;
         justify-content: center;
     }
+
+    .contact-legal-text {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1257,5 +1272,9 @@ body.has-fixed-nav { padding-top:90px; }
     .contact-address,
     .contact-details {
         font-size: 1rem;
+    }
+
+    .contact-legal-text p {
+        font-size: 0.6rem; /* Encore plus petit sur mobile */
     }
 }
