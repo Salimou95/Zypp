@@ -7,7 +7,7 @@
         <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
         <a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
         <a href="#" class="footer-social-icon"><i class="fab fa-pinterest"></i></a>
-        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/zypp.trott?igsh=MTRvaDFrd3M1anp0eQ%3D%3D&utm_source=qr" target="_blank" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </article>
