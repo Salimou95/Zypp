@@ -210,3 +210,29 @@ body.has-fixed-nav { padding-top:90px; }
 .offer-download-link:hover, .offer-download-link:focus { background:#ffffff; color:#3d3c3c; }
 .offer-download-link:focus { outline:2px solid #ffffff; outline-offset:2px; }
 /* Fin section offre */
+
+/* Ajout : mêmes dégradés colorés que dans assets/css/style.css */
+.features-section {
+  background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 40%, #e8fff4 100%);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-top: 6px solid rgba(11,132,255,0.06);
+}
+.features-section .features-title { color: #064a6b; }
+.features-section .features-text { color: #334155; }
+.features-details ul { list-style: none; padding: 0; margin: 0.5rem 0 0 0; }
+.features-details ul li { position: relative; padding-left: 1.8rem; margin-bottom: 0.6rem; color: #0f172a; }
+.features-details ul li:before { content: "\2022"; position: absolute; left: 0; top: 0; color: #0b84ff; font-weight: 700; }
+.features-details .small.text-muted { color: #64748b; }
+.features-section .features-image img { max-width: 320px; transition: transform .25s ease, box-shadow .25s ease; }
+.features-section .features-image img:hover { transform: translateY(-6px); box-shadow: 0 10px 25px rgba(11,59,111,0.12); }
+.discover-content {
+  padding-right: 2rem;
+  /* Fond uni à la place du dégradé */
+  background: #273b7c;
+  color: #fff; /* garantir le contraste */
+  padding: 5rem; /* Augmentation du padding de 3.5rem à 5rem pour plus de hauteur */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-radius: 0; /* Suppression du border-radius */
+  min-height: 450px; /* Augmentation de la hauteur minimale de 350px à 450px */
+}

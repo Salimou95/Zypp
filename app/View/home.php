@@ -153,6 +153,45 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
+<!-- Nouvelle section : Fonctionnalités & Avantages -->
+<section class="features-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Contenu principal (70%) -->
+      <div class="col-lg-8 col-md-7">
+        <article class="features-content">
+          <h2 class="features-title">Pourquoi choisir ZYPP ?</h2>
+          <p class="features-text">ZYPP met à votre disposition des trottinettes électriques fiables, sécurisées et faciles à utiliser. Profitez d'une autonomie longue durée, d'une assistance mobile et d'une couverture dans les zones urbaines principales.</p>
+          <ul class="features-list">
+            <li>Grande autonomie et charge rapide</li>
+            <li>Système de verrouillage sécurisé</li>
+            <li>Application intuitive avec suivi en temps réel</li>
+          </ul>
+          <!-- Contenu concis et rédigé pour le site (sans mention de date) -->
+          <div class="mt-4 features-details">
+            <p class="lead"><strong>Lancement à Montpellier</strong> — parc initial de <strong>1000 trottinettes</strong> en libre-service, sans borne d'attache.</p>
+            <ul>
+              <li>Accès via l'application mobile : déverrouillez et partez en quelques secondes</li>
+              <li>Tarif transparent : <strong>1&nbsp;€</strong> à la prise + <strong>0,15&nbsp;€/min</strong> (ex. 15&nbsp;min = <strong>3,25&nbsp;€</strong>)</li>
+              <li>Dépôt simple : garez sur un trottoir dans une zone autorisée indiquée par l'application, puis verrouillez pour terminer la course</li>
+              <li>Ramassage nocturne (21h–6h) pour recharge et maintenance</li>
+              <li>Programme de recharge à domicile : particuliers rémunérés ou bénéficiant d'avantages</li>
+            </ul>
+            <p class="small text-muted mb-0">Assurance au tiers et assistance 24/7 incluses. Pas d'abonnement obligatoire.</p>
+          </div>
+         </article>
+      </div>
+
+      <!-- Image (30%) -->
+      <div class="col-lg-4 col-md-5 mt-4 mt-md-0">
+        <article class="features-image text-center">
+          <img src="<?= ASSETS_URL ?>/images/trot3.png" alt="Trottinette ZYPP" class="img-fluid" style="border: none;">
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Section avec image zypp.png en pleine taille -->
 <section class="zypp-image-section">
     <img src="<?= ASSETS_URL ?>/images/zypp.png" alt="Zypp" class="zypp-full-image">
