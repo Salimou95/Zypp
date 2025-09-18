@@ -65,10 +65,16 @@
                         <?php endif; ?>
 
                         <form method="post" action="" class="contact-form">
-                            <!-- Nom complet -->
-                            <div class="mb-3">
-                                <label for="nom" class="form-label">Nom complet</label>
-                                <input type="text" class="form-control" id="nom" name="nom" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
+                            <!-- Prénom et Nom de famille sur la même ligne -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="prenom" class="form-label">Prénom</label>
+                                    <input type="text" class="form-control" id="prenom" name="prenom" value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nom" class="form-label">Nom de famille</label>
+                                    <input type="text" class="form-control" id="nom" name="nom" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
+                                </div>
                             </div>
 
                             <!-- Email -->
