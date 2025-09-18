@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php require_once __DIR__ . '/../config.php'; ?>
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/mobile.css?v=1">
     <script src="<?= ASSETS_URL ?>/js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,6 +86,16 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Section avec image zypp en pleine taille -->
+<section class="zypp-image-section w-100">
+    <img src="<?= ASSETS_URL ?>/images/zypp.png" alt="Zypp" class="zypp-full-image">
+    <div class="zypp-image-content">
+        <h2 class="zypp-image-title">Découvrez Zypp</h2>
+        <p class="zypp-image-text">La mobilité électrique de demain, disponible aujourd'hui</p>
+        <a href="<?= ROOT_URL ?>/" class="btn zypp-image-btn">En savoir plus</a>
     </div>
 </section>
 

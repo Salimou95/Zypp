@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/mobile.css?v=1">
     <script src="<?= ASSETS_URL ?>/js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,7 @@
             <div class="card shadow-lg border-0 auth-card">
                 <div class="card-body p-5">
                     <div class="text-center mb-4">
-                        <h2 class="fw-bold mb-2" style="color: #272b7c;">Connexion</h2>
+                        <h2 class="fw-bold mb-2" style="color: #0D2139;">Connexion</h2>
                         <p class="mb-0" style="color: #666666; font-size: 0.95rem;">Connectez-vous à votre compte ZYPP</p>
                     </div>
 
@@ -48,7 +49,7 @@
 
                     <div class="text-center">
                         <p class="mb-0" style="color: #666666;">Pas encore de compte ?
-                            <a href="<?= ROOT_URL ?>/auth/register" class="text-decoration-none fw-semibold" style="color: #272b7c;">Créer un compte</a>
+                            <a href="<?= ROOT_URL ?>/auth/register" class="text-decoration-none fw-semibold" style="color: #0D2139;">Créer un compte</a>
                         </p>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css?v=3">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/mobile.css?v=1">
     <script src="<?= ASSETS_URL ?>/js/script.js" defer></script>
 </head>
 <body class="d-flex flex-column min-vh-100">

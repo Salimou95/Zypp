@@ -41,3 +41,73 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
 });
+
+// Gestion du menu burger mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Vérifier que les éléments essentiels existent
+    if (!mobileMenuToggle || !mobileMenu) {
+        console.log('Éléments du menu mobile non trouvés');
+        return;
+    }
+
+    // Fonction pour ouvrir le menu
+    function openMobileMenu() {
+        mobileMenuToggle.classList.add('active');
+        mobileMenu.classList.add('mobile-menu-open');
+    }
+
+    // Fonction pour fermer le menu
+    function closeMobileMenu() {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('mobile-menu-open');
+    }
+
+    // Toggle du menu au clic sur le bouton burger
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('mobile-menu-open')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+
+    // Fermer le menu au clic sur un lien
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Fermer le menu à la touche Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('mobile-menu-open')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Fermer le menu lors du redimensionnement vers desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768 && mobileMenu.classList.contains('mobile-menu-open')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Fermer le menu si on clique ailleurs sur la page
+    document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            if (mobileMenu.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            }
+        }
+    });
+
+    // Debug - vérifier si le bouton est visible
+    console.log('Menu burger initialisé:', {
+        toggle: mobileMenuToggle,
+        menu: mobileMenu
+    });
+});

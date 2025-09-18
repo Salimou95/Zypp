@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/mobile.css?v=1">
     <script src="<?= ASSETS_URL ?>/js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,7 @@
 <div class="container my-5 flex-grow-1">
     <div class="row">
         <div class="col-12">
-            <h1 class="mb-4" style="color: #272b7c;">Mes trajets</h1>
+            <h1 class="mb-4" style="color: #0D2139;">Mes trajets</h1>
 
             <?php if (isset($error)): ?>
                 <div class="alert alert-danger">
@@ -29,7 +30,7 @@
             <?php if (empty($locations)): ?>
                 <div class="text-center py-5">
                     <i class="fas fa-scooter mb-3" style="font-size: 4rem; color: #97ecd3;"></i>
-                    <h3 style="color: #272b7c;">Aucun trajet effectué</h3>
+                    <h3 style="color: #0D2139;">Aucun trajet effectué</h3>
                     <p class="text-muted">Commencez votre première aventure avec ZYPP !</p>
                     <a href="<?= ROOT_URL ?>/" class="btn btn-primary mt-3">Découvrir les trottinettes</a>
                 </div>
@@ -45,7 +46,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-start mb-3">
-                                        <h5 class="card-title mb-0" style="color: #272b7c;">
+                                        <h5 class="card-title mb-0" style="color: #0D2139;">
                                             <?= htmlspecialchars($loc['trottinette'] ?? 'ZYPPI-' . str_pad($loc['id_location'], 3, '0', STR_PAD_LEFT)) ?>
                                         </h5>
                                         <?php if ($isActive): ?>
@@ -76,7 +77,7 @@
                                     <?php if ($duree): ?>
                                         <div class="mt-3">
                                             <small class="text-muted">Durée :</small>
-                                            <div class="fw-bold" style="color: #272b7c;"><?= $duree ?> minutes</div>
+                                            <div class="fw-bold" style="color: #0D2139;"><?= $duree ?> minutes</div>
                                         </div>
                                     <?php endif; ?>
                                 </div>

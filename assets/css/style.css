@@ -1200,8 +1200,8 @@ body.has-fixed-nav { padding-top:90px; }
 }
 
 .contact-form .form-control:focus {
-    border-color: #97ecd3;
-    box-shadow: 0 0 0 0.2rem rgba(151, 236, 211, 0.25);
+    border-color: #0D2139;
+    box-shadow: 0 0 0 0.2rem rgba(13, 33, 57, 0.25);
 }
 
 .contact-form textarea.form-control {
@@ -1251,13 +1251,13 @@ body.has-fixed-nav { padding-top:90px; }
 }
 
 .form-control:focus {
-    border-color: #272b7c;
-    box-shadow: 0 0 0 0.2rem rgba(39, 43, 124, 0.25);
+    border-color: #0D2139;
+    box-shadow: 0 0 0 0.2rem rgba(13, 33, 57, 0.25);
 }
 
 .btn-primary {
-    background: #272b7c !important;
-    border: 2px solid #272b7c !important;
+    background: #0D2139 !important;
+    border: 2px solid #0D2139 !important;
     color: white !important;
     border-radius: 10px;
     padding: 12px 30px;
@@ -1268,11 +1268,11 @@ body.has-fixed-nav { padding-top:90px; }
 }
 
 .btn-primary:hover {
-    background: #1a1d4a !important;
-    border-color: #1a1d4a !important;
+    background: #0b1b30 !important;
+    border-color: #0b1b30 !important;
     color: white !important;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(39, 43, 124, 0.4);
+    box-shadow: 0 5px 15px rgba(13, 33, 57, 0.4);
 }
 
 /* Styles pour la page des locations */
