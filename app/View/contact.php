@@ -16,18 +16,25 @@
         <h1 class="mb-4 text-center">Contact</h1>
         <div class="row justify-content-center">
             <div class="col-md-7 col-lg-6">
-                <form method="post" action="#" class="bg-white p-4 rounded shadow-sm">
+                <?php if (!empty($message)): ?>
+                    <div class="alert alert-<?= $messageType ?> alert-dismissible fade show" role="alert">
+                        <?= htmlspecialchars($message) ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php endif; ?>
+
+                <form method="post" action="" class="bg-white p-4 rounded shadow-sm">
                     <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="nom" name="nom" required>
+                        <input type="text" class="form-control" id="nom" name="nom" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="5" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
                     </div>
                     <button type="submit" class="btn hero-btn w-100">Envoyer</button>
                 </form>
