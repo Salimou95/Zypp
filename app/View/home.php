@@ -11,9 +11,13 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/style.css?v=3">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/mobile.css?v=1">
     <script src="<?= ASSETS_URL ?>/js/script.js" defer></script>
+    <!-- Leaflet JS pour la carte -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <?php include __DIR__ . '/partials/nav.php'; ?>
@@ -81,17 +85,34 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46733.51736847962!2d3.8320343!3d43.6112422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af0725dd9db1%3A0xad8756742894e802!2sMontpellier!5e0!3m2!1sfr!2sfr!4v1637328000000!5m2!1sfr!2sfr"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <div id="map" style="height: 450px; width: 100%; border-radius: 8px;"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Coordonnées approximatives pour 47 rue des Couronnes, Montpellier
+    var lat = 43.6167;
+    var lng = 3.8767;
+
+    // Initialiser la carte
+    var map = L.map('map').setView([lat, lng], 16);
+
+    // Ajouter les tuiles OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Ajouter un marqueur rouge sur l'adresse
+    var marker = L.marker([lat, lng]).addTo(map);
+
+    // Ajouter une popup avec l'adresse
+    marker.bindPopup('<b>ZYPP</b><br>47 rue des Couronnes<br>34020 Montpellier, France').openPopup();
+});
+</script>
 
 <!-- Section Comment ça marche -->
 <section class="how-it-works-section">
