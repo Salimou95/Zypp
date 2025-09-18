@@ -22,4 +22,14 @@ class ContactModel {
             throw new Exception("Erreur d'envoi: " . $e->getMessage());
         }
     }
+
+    /**
+     * Méthode pour sauvegarder le message en base de données (optionnel)
+     * Utile pour garder une trace des messages même si l'email échoue
+     */
+    public function saveContactMessage($nom, $email, $message) {
+        // Cette méthode peut être implémentée plus tard pour sauvegarder en BDD
+        // Utile pour Heroku où les emails peuvent parfois échouer
+        return true;
+    }
 }
