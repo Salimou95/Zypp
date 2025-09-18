@@ -1231,56 +1231,130 @@ body.has-fixed-nav { padding-top:90px; }
     transform: translateY(-1px);
 }
 
-/* Responsive pour la page contact */
-@media (max-width: 991px) {
-    .contact-info-col,
-    .contact-form-col {
-        width: 100% !important;
-        flex: 0 0 100%;
-    }
+/* Styles pour les pages d'authentification */
+.auth-card {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .contact-info {
-        min-height: auto;
-        padding: 3rem 2rem;
-    }
+.auth-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
 
-    .contact-form-container {
-        min-height: auto;
-        padding: 3rem 2rem;
-    }
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+    padding: 12px 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .contact-social-icons {
-        margin-top: 2rem;
-        justify-content: center;
-    }
+.form-control:focus {
+    border-color: #272b7c;
+    box-shadow: 0 0 0 0.2rem rgba(39, 43, 124, 0.25);
+}
 
-    .contact-legal-text {
-        text-align: center;
-        margin-top: 2rem;
-        padding-top: 1rem;
+.btn-primary {
+    background: #272b7c !important;
+    border: 2px solid #272b7c !important;
+    color: white !important;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: #1a1d4a !important;
+    border-color: #1a1d4a !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 43, 124, 0.4);
+}
+
+/* Styles pour la page des locations */
+.location-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+.badge {
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+.card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.alert {
+    animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Responsive improvements */
 @media (max-width: 768px) {
-    .contact-info {
-        padding: 2rem 1.5rem;
-        text-align: center;
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
-    .contact-form-container {
+    .card-body {
         padding: 2rem 1.5rem;
     }
 
-    .contact-title {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
         font-size: 1.5rem;
     }
+}
 
-    .contact-address,
-    .contact-details {
-        font-size: 1rem;
-    }
+/* Amélioration des icônes */
+.fas, .fab {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
-    .contact-legal-text p {
-        font-size: 0.6rem; /* Encore plus petit sur mobile */
-    }
+.text-primary .fas:hover {
+    transform: scale(1.1);
+}
+
+/* Style pour les messages de succès/erreur */
+.alert-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: none;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da 0%, #f1aeb5 100%);
+    border: none;
+    border-left: 4px solid #dc3545;
 }
