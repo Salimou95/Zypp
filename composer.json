@@ -3,10 +3,10 @@
     "description": "Système de contact avec Mailgun pour Heroku",
     "type": "project",
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "mailgun/mailgun-php": "^4.2"
     },
     "config": {
         "optimize-autoloader": true
     }
 }
-
