@@ -34,6 +34,9 @@ if (session_status() === PHP_SESSION_NONE) session_start();
           </li>
         <?php else: ?>
           <li class="nav-item">
+            <a class="nav-link fw-bold text-primary" href="<?= ROOT_URL ?>/auth/register">Inscription</a>
+          </li>
+          <li class="nav-item">
             <a class="btn-login" href="<?= ROOT_URL ?>/auth/login">Connexion</a>
           </li>
         <?php endif; ?>
@@ -53,6 +56,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
           <a class="btn-login" href="<?= ROOT_URL ?>/auth/logout">Se déconnecter</a>
         </li>
       <?php else: ?>
+        <li class="nav-item"<a class="nav-link" href="<?= ROOT_URL ?>/auth/register">Inscription</a>
+        </li>
         <li class="nav-item">
           <a class="btn-login" href="<?= ROOT_URL ?>/auth/login">Connexion</a>
         </li>
