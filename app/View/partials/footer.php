@@ -51,7 +51,7 @@
         <a href="#" class="footer-legal-link">Politique de confidentialité</a>
       </div>
       <div class="text-center">
-        <p>&copy; 2024 ZYPP. Tous droits réservés.</p>
+        <p>&copy; 2025 ZYPP. Tous droits réservés.</p>
       </div>
     </div>
   </article>
