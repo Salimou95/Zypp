@@ -55,34 +55,44 @@
             <!-- Article de droite - Formulaire -->
             <div class="col-lg-9 contact-form-col">
                 <div class="contact-form-container">
-                    <form method="post" action="#" class="contact-form">
-                        <!-- Prénom et Nom côte à côte -->
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="prenom" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="prenom" name="prenom" required>
+                    <div class="contact-form-wrapper">
+                        <!-- Messages de succès/erreur au-dessus du formulaire -->
+                        <?php if (!empty($message)): ?>
+                            <div class="alert alert-<?= $messageType ?> alert-dismissible fade show" role="alert" style="margin-bottom: 2rem;">
+                                <?= htmlspecialchars($message) ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
-                            <div class="col-md-6">
-                                <label for="nom" class="form-label">Nom de famille</label>
-                                <input type="text" class="form-control" id="nom" name="nom" required>
+                        <?php endif; ?>
+
+                        <form method="post" action="" class="contact-form">
+                            <!-- Prénom et Nom de famille sur la même ligne -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="prenom" class="form-label">Prénom</label>
+                                    <input type="text" class="form-control" id="prenom" name="prenom" value="<?= htmlspecialchars($_POST['prenom'] ?? '') ?>" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nom" class="form-label">Nom de famille</label>
+                                    <input type="text" class="form-control" id="nom" name="nom" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Email seul -->
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email*</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email*</label>
+                                <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
+                            </div>
 
-                        <!-- Message -->
-                        <div class="mb-4">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
-                        </div>
+                            <!-- Message -->
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="6" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
+                            </div>
 
-                        <!-- Bouton Envoyer -->
-                        <button type="submit" class="btn contact-submit-btn">Envoyer</button>
-                    </form>
+                            <!-- Bouton Envoyer -->
+                            <button type="submit" class="btn contact-submit-btn">Envoyer</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

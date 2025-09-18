@@ -1,0 +1,11 @@
+{
+    "name": "zypp/contact-system",
+    "description": "Système de contact avec Mailgun pour Heroku",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

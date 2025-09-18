@@ -1175,10 +1175,20 @@ body.has-fixed-nav { padding-top:90px; }
     justify-content: center;
 }
 
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .contact-form {
     width: 100%;
     max-width: 650px; /* Augmentation de 500px à 650px pour plus de largeur */
     margin: 0 auto;
+    flex: 1;
 }
 
 .contact-form .form-label {
