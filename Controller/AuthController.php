@@ -34,7 +34,9 @@ class AuthController {
                 } else {
                     try {
                         if ($this->model()->register($firstName, $lastName, $mail, $password)) {
-                            $message = 'Inscription réussie. Vous pouvez vous connecter.';
+                            // Redirection vers la page de connexion après inscription réussie
+                            header('Location: ' . ROOT_URL . '/auth/login?success=1');
+                            exit;
                         } else {
                             $message = 'Adresse e-mail déjà utilisée.';
                         }
@@ -55,6 +57,12 @@ class AuthController {
         }
 
         $message = '';
+
+        // Message de succès après inscription
+        if (isset($_GET['success']) && $_GET['success'] == '1') {
+            $message = 'Inscription réussie ! Vous pouvez maintenant vous connecter.';
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail     = trim(isset($_POST['mail']) ? $_POST['mail'] : '');
             $password = isset($_POST['password']) ? $_POST['password'] : '';

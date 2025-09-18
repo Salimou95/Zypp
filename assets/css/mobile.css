@@ -1,0 +1,631 @@
+/* ====== STYLES RESPONSIVE MOBILE ====== */
+/* Ce fichier est uniquement pour les styles mobiles */
+
+/* Menu burger - FORCER L'AFFICHAGE sur mobile */
+.mobile-menu-toggle {
+    display: none !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: auto;
+    z-index: 1050;
+    position: relative;
+}
+
+@media (max-width: 767.98px) {
+    /* === NAVIGATION MOBILE === */
+    .navbar {
+        padding: 10px 20px !important;
+    }
+
+    .navbar .container-fluid {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        position: relative;
+    }
+
+    /* Menu burger - FORCER L'AFFICHAGE */
+    .mobile-menu-toggle {
+        display: block !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        margin-left: auto;
+        z-index: 1050;
+        position: relative;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #062638;
+        margin: 5px 0;
+        transition: 0.3s;
+        border-radius: 3px;
+    }
+
+    /* Animation du burger en croix */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Menu mobile caché par défaut */
+    .navbar-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(to bottom, #97ecd3, #a5ebd7);
+        flex-direction: column !important;
+        padding: 80px 30px 30px 30px;
+        transition: right 0.3s ease;
+        z-index: 1040;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* Menu mobile visible */
+    .navbar-nav.mobile-menu-open {
+        right: 0;
+    }
+
+    /* Overlay sombre - DÉSACTIVÉ */
+    .mobile-menu-overlay {
+        display: none !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1030;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-overlay.active {
+        display: none !important;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Styles des liens dans le menu mobile */
+    .navbar-nav .nav-item {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        color: #062638 !important;
+        font-size: 1.1rem !important;
+        font-weight: 700 !important;
+        text-align: center;
+        padding: 15px 20px !important;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: rgba(6, 38, 56, 0.1);
+        transform: translateX(5px);
+    }
+
+    /* Bouton connexion dans le menu mobile */
+    .navbar-nav .btn-login {
+        background: #0D2139 !important;
+        color: #fff !important;
+        padding: 15px 20px !important;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: fit-content;
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .btn-login:hover {
+        background: #0b1b30 !important;
+        transform: translateY(-2px);
+    }
+
+    /* === SECTIONS PRINCIPALES === */
+
+    /* Hero section */
+    .hero-title {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+    }
+
+    .hero-btn {
+        display: block;
+        width: 200px;
+        margin: 20px auto 0 auto !important;
+        text-align: center;
+    }
+
+    /* Services */
+    .row-bloc-services {
+        justify-content: flex-start;
+        padding: 0 15px;
+    }
+
+    .row-bloc-services article {
+        width: 80px;
+        min-width: 80px;
+    }
+
+    .row-bloc-services img {
+        max-width: 35px;
+        height: 35px;
+    }
+
+    .row-bloc-services article h2 {
+        font-size: 0.7rem;
+    }
+
+    /* Section offre */
+    .offer-section-new {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .offer-content {
+        padding: 2rem !important;
+        margin-bottom: 2rem;
+        text-align: center;
+        min-height: auto !important;
+    }
+
+    .offer-main-title {
+        font-size: 1.5rem !important;
+    }
+
+    .offer-sub-title {
+        font-size: 1.4rem !important;
+    }
+
+    .offer-text {
+        font-size: 1rem !important;
+    }
+
+    .offer-image {
+        min-height: auto !important;
+    }
+
+    .offer-image img {
+        min-height: 250px !important;
+        height: 250px !important;
+    }
+
+    /* Section découverte */
+    .discover-content {
+        padding: 3rem 2rem !important;
+        margin-bottom: 2rem;
+        text-align: center;
+        min-height: auto !important;
+    }
+
+    .discover-main-title {
+        font-size: 1.7rem !important;
+    }
+
+    .discover-sub-title {
+        font-size: 1.6rem !important;
+    }
+
+    .discover-text {
+        font-size: 1rem !important;
+    }
+
+    .discover-image img {
+        min-height: 250px !important;
+    }
+
+    /* Section Trouver votre ZYPPI */
+    .find-zyppi-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .find-zyppi-title {
+        font-size: 1.4rem !important;
+    }
+
+    .find-zyppi-text {
+        font-size: 0.85rem !important;
+        padding: 0 15px;
+    }
+
+    .find-zyppi-btn {
+        padding: 0.6rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Section image zypp */
+    .zypp-image-section {
+        min-height: 70vh !important;
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        margin-right: calc(-50vw + 50%) !important;
+        padding: 0 !important;
+    }
+
+    .zypp-full-image {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        z-index: 1 !important;
+        display: block !important;
+    }
+
+    /* Overlay sombre pour améliorer la lisibilité du texte sur mobile */
+    .zypp-image-section::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        z-index: 2 !important;
+    }
+
+    .zypp-image-content {
+        position: relative !important;
+        z-index: 3 !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        padding: 1.5rem !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;
+    }
+
+    .zypp-image-title {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+        line-height: 1.2 !important;
+    }
+
+    .zypp-image-text {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 1.5rem !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
+        padding: 0 10px !important;
+    }
+
+    .zypp-image-btn {
+        padding: 0.7rem 1.8rem !important;
+        font-size: 0.95rem !important;
+        display: inline-block !important;
+        background: #97ecd3 !important;
+        color: #062638 !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        border: 2px solid #97ecd3 !important;
+        border-radius: 5px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Section Comment ça marche */
+    .how-it-works-section {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    .how-it-works-title {
+        font-size: 2rem !important;
+    }
+
+    .how-it-works-text {
+        font-size: 1rem !important;
+        padding: 0 15px;
+    }
+
+    .how-it-works-steps {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .step-item {
+        max-width: 280px;
+    }
+
+    /* Section numérotée */
+    .numbered-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .numbered-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .numbered-article {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding: 3rem 1.5rem 2rem 1.5rem;
+        max-width: 280px;
+        min-height: 250px !important;
+    }
+
+    .article-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+        top: -30px;
+    }
+
+    .article-title {
+        font-size: 1rem !important;
+        margin-top: 1rem;
+    }
+
+    .article-text {
+        font-size: 0.9rem !important;
+    }
+
+    .article-btn {
+        padding: 0.4rem 0.4rem !important;
+        font-size: 0.7rem !important;
+        width: 10rem !important;
+    }
+
+    /* === CARTE MOBILE === */
+    .map-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .map-container {
+        width: 95% !important;
+        height: 300px !important;
+    }
+
+    /* === FOOTER MOBILE === */
+    .footer-social {
+        padding: 1.5rem 0;
+    }
+
+    .social-icons-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-social-icon {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 1.4rem !important;
+    }
+
+    .footer-info {
+        padding: 2rem 0 1.5rem 0;
+    }
+
+    .footer-info .row {
+        text-align: center;
+    }
+
+    .footer-info .col-md-3,
+    .footer-info .col-md-4 {
+        margin-bottom: 2rem;
+    }
+
+    .footer-links-no-bullet {
+        margin-right: 0 !important;
+        text-align: center;
+    }
+
+    .footer-links-with-bullet {
+        text-align: center;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-legal-links {
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+        text-align: center;
+    }
+
+    .footer-legal-link {
+        font-size: 0.7rem !important;
+        margin: 0 0.5rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
+
+    /* === PAGE CONTACT MOBILE === */
+    .contact-section {
+        min-height: auto !important;
+        flex-direction: column;
+    }
+
+    .contact-info-col,
+    .contact-form-col {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    .contact-info {
+        min-height: auto !important;
+        padding: 3rem 2rem 2rem 2rem;
+        text-align: center;
+    }
+
+    .contact-info-content {
+        max-width: none;
+        text-align: center;
+    }
+
+    .contact-title {
+        font-size: 1.3rem !important;
+    }
+
+    .contact-address,
+    .contact-details {
+        font-size: 0.8rem !important;
+    }
+
+    .contact-social-icons {
+        justify-content: center;
+        margin-bottom: 2rem !important;
+    }
+
+    .contact-legal-text {
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+
+    .contact-legal-text p {
+        font-size: 0.6rem !important;
+    }
+
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+        min-height: auto !important;
+    }
+
+    .contact-form {
+        max-width: none !important;
+    }
+
+    .contact-submit-btn {
+        padding: 0.4rem 2rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* === PAGES D'AUTHENTIFICATION MOBILE === */
+    .auth-card {
+        margin: 1rem;
+        border-radius: 10px !important;
+    }
+
+    .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+
+    h1 {
+        font-size: 1.6rem !important;
+    }
+
+    h2 {
+        font-size: 1.3rem !important;
+    }
+
+    .form-control {
+        padding: 10px 12px !important;
+        border-radius: 8px !important;
+    }
+
+    .btn-primary {
+        padding: 10px 25px !important;
+        border-radius: 8px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* === PAGES LOCATIONS MOBILE === */
+    .location-card {
+        margin-bottom: 1rem;
+    }
+
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+
+    .badge {
+        padding: 6px 10px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* === AJUSTEMENTS GÉNÉRAUX === */
+    body {
+        padding-top: 70px !important;
+    }
+
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Bootstrap responsive classes - corriger les conflits */
+    .d-md-none {
+        display: block !important;
+    }
+
+    .d-md-block {
+        display: none !important;
+    }
+}
+
+/* === STYLES POUR ÉCRANS TRÈS PETITS === */
+@media (max-width: 480px) {
+    .navbar .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+
+    .offer-main-title,
+    .discover-main-title {
+        font-size: 1.3rem !important;
+    }
+
+    .offer-sub-title,
+    .discover-sub-title {
+        font-size: 1.2rem !important;
+    }
+
+    .zypp-image-title {
+        font-size: 1.8rem !important;
+    }
+
+    .how-it-works-title {
+        font-size: 1.7rem !important;
+    }
+
+    .numbered-article {
+        max-width: 260px;
+        padding: 2.5rem 1rem 1.5rem 1rem;
+    }
+
+    .contact-form-container {
+        padding: 1.5rem 1rem;
+    }
+}
