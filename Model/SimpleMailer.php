@@ -1,7 +1,7 @@
 <?php
 /**
- * Classe d'envoi d'email compatible Heroku
- * Utilise une API externe car Heroku ne supporte pas mail()
+ * Classe d'envoi d'email compatible Heroku - Optimisée pour Mailgun
+ * Utilise Mailgun API car Heroku ne supporte pas mail()
  */
 class SimpleMailer {
 
@@ -12,18 +12,56 @@ class SimpleMailer {
         // Construction du message HTML
         $htmlMessage = self::buildHtmlMessage($nom, $email, $message);
 
-        // Essayer d'abord avec SendGrid si configuré
-        if (isset($_ENV['SENDGRID_API_KEY'])) {
-            return self::sendWithSendGrid($to, $subject, $htmlMessage, $email, $nom);
-        }
-
-        // Sinon essayer avec Mailgun si configuré
+        // Essayer avec Mailgun en priorité
         if (isset($_ENV['MAILGUN_API_KEY']) && isset($_ENV['MAILGUN_DOMAIN'])) {
             return self::sendWithMailgun($to, $subject, $htmlMessage, $email, $nom);
         }
 
+        // Fallback avec SendGrid si Mailgun n'est pas configuré
+        if (isset($_ENV['SENDGRID_API_KEY'])) {
+            return self::sendWithSendGrid($to, $subject, $htmlMessage, $email, $nom);
+        }
+
         // Fallback : sauvegarder en fichier pour récupération manuelle
         return self::saveToFile($nom, $email, $message, $to);
+    }
+
+    private static function sendWithMailgun($to, $subject, $htmlMessage, $fromEmail, $fromName) {
+        $apiKey = $_ENV['MAILGUN_API_KEY'];
+        $domain = $_ENV['MAILGUN_DOMAIN'];
+
+        $data = [
+            'from' => "Contact Zypp <mailgun@$domain>",
+            'to' => $to,
+            'subject' => $subject,
+            'html' => $htmlMessage,
+            'h:Reply-To' => $fromEmail,
+            'text' => strip_tags($htmlMessage) // Version texte pour compatibilité
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.mailgun.net/v3/$domain/messages");
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch, CURLOPT_USERPWD, "api:$apiKey");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $error = curl_error($ch);
+        curl_close($ch);
+
+        $success = ($httpCode >= 200 && $httpCode < 300);
+
+        if ($success) {
+            error_log("✅ Email envoyé avec succès via Mailgun vers: $to pour: $fromName ($fromEmail)");
+        } else {
+            error_log("❌ Échec Mailgun (HTTP $httpCode): $response | Erreur cURL: $error");
+        }
+
+        return $success;
     }
 
     private static function sendWithSendGrid($to, $subject, $htmlMessage, $fromEmail, $fromName) {
@@ -72,40 +110,6 @@ class SimpleMailer {
             error_log("Email envoyé avec succès via SendGrid vers: $to pour: $fromName ($fromEmail)");
         } else {
             error_log("Échec SendGrid (HTTP $httpCode): $response");
-        }
-
-        return $success;
-    }
-
-    private static function sendWithMailgun($to, $subject, $htmlMessage, $fromEmail, $fromName) {
-        $apiKey = $_ENV['MAILGUN_API_KEY'];
-        $domain = $_ENV['MAILGUN_DOMAIN'];
-
-        $data = [
-            'from' => "Contact Zypp <noreply@$domain>",
-            'to' => $to,
-            'subject' => $subject,
-            'html' => $htmlMessage,
-            'h:Reply-To' => $fromEmail
-        ];
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.mailgun.net/v3/$domain/messages");
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt($ch, CURLOPT_USERPWD, "api:$apiKey");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        $success = ($httpCode >= 200 && $httpCode < 300);
-
-        if ($success) {
-            error_log("Email envoyé avec succès via Mailgun vers: $to pour: $fromName ($fromEmail)");
-        } else {
-            error_log("Échec Mailgun (HTTP $httpCode): $response");
         }
 
         return $success;
