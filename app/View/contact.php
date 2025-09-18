@@ -15,6 +15,16 @@
 <body class="d-flex flex-column min-vh-100">
 <?php include __DIR__ . '/partials/nav.php'; ?>
 
+<!-- Messages de succès/erreur au-dessus du formulaire -->
+<?php if (!empty($message)): ?>
+    <div class="container mt-4">
+        <div class="alert alert-<?= $messageType ?> alert-dismissible fade show" role="alert">
+            <?= htmlspecialchars($message) ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<?php endif; ?>
+
 <!-- Section Contact -->
 <section class="contact-section">
     <div class="container-fluid p-0">
@@ -55,29 +65,23 @@
             <!-- Article de droite - Formulaire -->
             <div class="col-lg-9 contact-form-col">
                 <div class="contact-form-container">
-                    <form method="post" action="#" class="contact-form">
-                        <!-- Prénom et Nom côte à côte -->
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="prenom" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="prenom" name="prenom" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="nom" class="form-label">Nom de famille</label>
-                                <input type="text" class="form-control" id="nom" name="nom" required>
-                            </div>
+                    <form method="post" action="" class="contact-form">
+                        <!-- Nom complet -->
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Nom complet</label>
+                            <input type="text" class="form-control" id="nom" name="nom" value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
                         </div>
 
-                        <!-- Email seul -->
+                        <!-- Email -->
                         <div class="mb-3">
                             <label for="email" class="form-label">Email*</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
                         </div>
 
                         <!-- Message -->
                         <div class="mb-4">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                            <textarea class="form-control" id="message" name="message" rows="6" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
                         </div>
 
                         <!-- Bouton Envoyer -->
